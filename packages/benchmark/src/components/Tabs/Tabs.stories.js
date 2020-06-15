@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Box, Text } from '../Base';
 import Stack from '../Stack';
 import Button from '../Button';
-import { Tabs, Tab, TabList, TabPanel, TabPanels } from './Tabs.js';
 import Paragraph from '../Paragraph';
+import { Tabs, Tab, TabList, TabPanel, TabPanels } from './Tabs.js';
 
 export default {
   title: 'Elements/Tabs',
