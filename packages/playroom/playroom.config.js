@@ -1,6 +1,6 @@
 module.exports = {
   components: '@coreym/benchmark',
-  outputPath: './dist/playroom',
+  outputPath: './dist',
 
   // Optional:
   title: 'Benchmark Playroom',
