@@ -9,7 +9,7 @@ function Option({ children, selected = false, onClick }) {
       px="3"
       py="2"
       onClick={onClick}
-      bg={selected ? 'blue.100' : null}
+      bg={selected ? 'secondary' : null}
       pr="34px"
       sx={{
         cursor: 'pointer',
