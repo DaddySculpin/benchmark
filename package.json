@@ -11,9 +11,11 @@
     "bootstrap": "lerna bootstrap",
     "lint": "lerna run lint",
     "lint:fix": "lerna run lint:fix",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "build:website": "yarn build && node ./scripts/publish-website.js"
   },
   "devDependencies": {
+    "fs-extra": "^9.0.1",
     "husky": "^4.2.5",
     "lerna": "^3.20.2"
   },
