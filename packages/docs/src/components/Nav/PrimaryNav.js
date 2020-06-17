@@ -41,13 +41,13 @@ function PrimaryNav({ data = [], toggleStatus }) {
             <ul className={css.secondary}>
               <PrimarySubNavItem
                 title="Playroom"
-                url={isProd ? './playroom/' : 'http://localhost:5003'}
+                url={isProd ? '/benchmark/playroom/' : 'http://localhost:5003'}
                 isActive={true}
                 isNewTab={true}
               />
               <PrimarySubNavItem
                 title="Storybook"
-                url={isProd ? './storybook/' : 'http://localhost:5000'}
+                url={isProd ? '/benchmark/storybook/' : 'http://localhost:5000'}
                 isActive={true}
                 isNewTab={true}
               />
