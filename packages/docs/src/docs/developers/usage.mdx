@@ -1,0 +1,31 @@
+---
+title: Usage
+path: /developers/usage
+group: Developers
+status: In Progress
+---
+
+## Getting Started
+
+Install benchmark and it's dependencies.
+
+```bash
+npm install @coreym/benchmark
+npm install @emotion/core @emotion/styled emotion-theming
+```
+
+Add the ThemeProvider to the root of your app and start using the components!
+
+```jsx
+// App.js
+import React from 'react';
+import { Box, ThemeProvider } from '@coreym/benchmark';
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <Box bg="blue.100">Hello World</Box>
+    </ThemeProvider>
+  );
+}
+```

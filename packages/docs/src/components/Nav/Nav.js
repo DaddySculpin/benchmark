@@ -15,6 +15,7 @@ export default ({ children }) => {
                   group
                   title
                   path
+                  status
                 }
               }
             }

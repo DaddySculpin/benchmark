@@ -1,9 +1,8 @@
 ---
-title: Single Select
+title: SingleSelect
 path: /components/singleselect
 group: Components
-status: In Progress
-updated: '2020-02-13'
+status: Pending
 ---
 
 ## Overview
@@ -24,7 +23,7 @@ Current Considerations:
 
 ## Usage
 
-```javascript
+```javascript live=true
 function ExampleA() {
   const [selected, setSelected] = React.useState();
   const [eliminated, setEliminated] = React.useState([]);
@@ -37,13 +36,13 @@ function ExampleA() {
   function handleChange(optionId) {
     setSelected(optionId);
     if (eliminated.includes(optionId)) {
-      setEliminated(eliminated.filter(i => i !== optionId));
+      setEliminated(eliminated.filter((i) => i !== optionId));
     }
   }
 
   function handleEliminate(optionId) {
     if (eliminated.includes(optionId)) {
-      setEliminated(eliminated.filter(i => i !== optionId));
+      setEliminated(eliminated.filter((i) => i !== optionId));
     } else {
       setEliminated([...eliminated, optionId]);
     }
