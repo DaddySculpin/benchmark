@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import * as Components from '@coreym/benchmark';
-import CodeFrame from '../CodeFrame';
-import css from './LiveCodeBlock.module.css';
+import { Box } from '@coreym/benchmark';
+import PreviewFrame from './PreviewFrame.js';
+import css from './CodeBlock.module.css';
 import codeTheme from './themes/default.js';
 
 export default ({ children, render, renderTheme = 'Default' }) => {
@@ -21,33 +22,41 @@ export default ({ children, render, renderTheme = 'Default' }) => {
 
   if (render) {
     return (
-      <Components.Box border="1" borderColor="n.300">
-        <LiveProvider code={children}>
-          <CodeFrame onToggleCode={() => toggleCode(!showEditor)}>
+      <Box border="1" borderColor="n.300">
+        <LiveProvider code={children.trim()}>
+          <PreviewFrame onToggleCode={() => toggleCode(!showEditor)}>
             <LivePreview className={css.preview} />
-          </CodeFrame>
+          </PreviewFrame>
         </LiveProvider>
-      </Components.Box>
+      </Box>
     );
   }
+
   return (
-    <Components.Box border="1" borderColor="n.300" mb="4" mt="2">
+    <Box
+      border="1"
+      borderRadius="lg"
+      borderColor="n.200"
+      overflow="hidden"
+      mb="4"
+      mt="2"
+    >
       <LiveProvider
         code={children.trim()}
         scope={{ ...Components }}
         theme={codeTheme}
       >
-        <CodeFrame
+        <PreviewFrame
           onToggleCode={() => toggleCode(!showEditor)}
           theme={renderTheme}
         >
           <div className={css.codeframe}>
             <LivePreview className={css.preview} />
           </div>
-        </CodeFrame>
+        </PreviewFrame>
         {showEditor ? <Editor /> : null}
         <LiveError className={css.pre} />
       </LiveProvider>
-    </Components.Box>
+    </Box>
   );
 };

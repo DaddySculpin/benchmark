@@ -14,7 +14,7 @@ import {
 } from '@coreym/benchmark';
 import docsTheme from './theme';
 import Layout from './components/Layout';
-import LiveCodeBlock from './components/LiveCodeBlock';
+import CodeBlock from './components/CodeBlock';
 import ColorSwatch from './components/ColorSwatch';
 
 const components = {
@@ -25,7 +25,7 @@ const components = {
   h5: (props) => <Heading level={5} {...props} />,
   p: (props) => <Paragraph lineHeight="1.5" mt="2" {...props} />,
   pre: (props) => <div {...props} />,
-  code: LiveCodeBlock,
+  code: CodeBlock,
   Tag,
   ColorSwatch,
   ThemeProvider,
