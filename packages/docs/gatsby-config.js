@@ -7,12 +7,25 @@ module.exports = {
     title: 'Benchmark Design System',
   },
   plugins: [
+    {
+      resolve: 'gatsby-transformer-react-docgen',
+      options: {
+        babelrcRoots: ['../benchmark/*'],
+      },
+    },
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/docs/`,
         name: 'docs',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: '../benchmark/src',
+        name: 'benchmark',
       },
     },
     // page creator plugin is needed to create mdx pages from folders
