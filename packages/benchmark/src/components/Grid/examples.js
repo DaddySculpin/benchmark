@@ -83,10 +83,10 @@ export function GridRadioButtons() {
                 <Text>Lorem ipsum dolor sit amet.</Text>
               </td>
               <td>
-                <Grid.Radio inputId="A1" inputGroup="A" />
+                <Grid.Radio inputId="A1" groupId="A" />
               </td>
               <td>
-                <Grid.Radio inputId="A2" inputGroup="A" />
+                <Grid.Radio inputId="A2" groupId="A" />
               </td>
             </tr>
             <tr>
@@ -94,10 +94,10 @@ export function GridRadioButtons() {
                 <Text>Consectetur adipiscing elit.</Text>
               </td>
               <td>
-                <Grid.Radio inputId="B1" inputGroup="B" />
+                <Grid.Radio inputId="B1" groupId="B" />
               </td>
               <td>
-                <Grid.Radio inputId="B2" inputGroup="B" />
+                <Grid.Radio inputId="B2" groupId="B" />
               </td>
             </tr>
             <tr>
@@ -105,10 +105,10 @@ export function GridRadioButtons() {
                 <Text>Aenean commodo ligula eget dolor.</Text>
               </td>
               <td>
-                <Grid.Radio inputId="C1" inputGroup="C" />
+                <Grid.Radio inputId="C1" groupId="C" />
               </td>
               <td>
-                <Grid.Radio inputId="C2" inputGroup="C" />
+                <Grid.Radio inputId="C2" groupId="C" />
               </td>
             </tr>
           </tbody>

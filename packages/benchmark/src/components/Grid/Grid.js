@@ -74,7 +74,7 @@ function GridRadio({ inputId, groupId }) {
   const value = response[groupId];
   const checked = value === inputId;
 
-  function handleClick() {
+  function handleChange() {
     updateResponse({ ...response, [groupId]: inputId });
   }
 
@@ -82,8 +82,8 @@ function GridRadio({ inputId, groupId }) {
     <Box>
       <RadioButton
         checked={checked}
-        onClick={handleClick}
-        onChange={() => {}}
+        onClick={() => {}}
+        onChange={handleChange}
       />
     </Box>
   );
