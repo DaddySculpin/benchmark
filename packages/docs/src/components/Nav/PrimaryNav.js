@@ -76,6 +76,26 @@ function PrimaryNav({ data = [], toggleStatus }) {
         />
         <PrimaryNavItem
           isActive={false}
+          href="/designers"
+          label="Designers"
+          toggleStatus={toggleStatus}
+          subNavItem={
+            <ul className={css.secondary}>
+              <PrimarySubNavItem
+                title="Workflow"
+                url="/designers/workflow"
+                isActive={false}
+              />
+              <PrimarySubNavItem
+                title="Contributing"
+                url="/developers/contributing"
+                isActive={false}
+              />
+            </ul>
+          }
+        />
+        <PrimaryNavItem
+          isActive={false}
           href="/guidelines"
           label="Guidelines"
           toggleStatus={toggleStatus}
@@ -89,6 +109,7 @@ function PrimaryNav({ data = [], toggleStatus }) {
                       key={post.id}
                       title={post.frontmatter.title}
                       url={post.frontmatter.path}
+                      isActive={post.frontmatter.status === 'In Progress'}
                     />
                   );
                 })}
