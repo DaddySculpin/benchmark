@@ -10,11 +10,13 @@ export default {
 
 export function Basic() {
   return (
-    <SingleSelect>
-      <SingleSelectChoice value="a">Option A</SingleSelectChoice>
-      <SingleSelectChoice value="b">Option B</SingleSelectChoice>
-      <SingleSelectChoice value="c">Option C</SingleSelectChoice>
-    </SingleSelect>
+    <>
+      <SingleSelect>
+        <SingleSelectChoice>Option A</SingleSelectChoice>
+        <SingleSelectChoice>Option B</SingleSelectChoice>
+        <SingleSelectChoice>Option C</SingleSelectChoice>
+      </SingleSelect>
+    </>
   );
 }
 
@@ -44,11 +46,9 @@ export function OptionDisabled() {
       selected={selected}
       eliminated={eliminated}
     >
-      <SingleSelectChoice value="a">Option A</SingleSelectChoice>
-      <SingleSelectChoice value="b" isDisabled>
-        Option B
-      </SingleSelectChoice>
-      <SingleSelectChoice value="c">Option C</SingleSelectChoice>
+      <SingleSelectChoice>Option A</SingleSelectChoice>
+      <SingleSelectChoice isDisabled>Option B</SingleSelectChoice>
+      <SingleSelectChoice>Option C</SingleSelectChoice>
     </SingleSelect>
   );
 }
@@ -80,9 +80,9 @@ export function Disabled() {
       eliminated={eliminated}
       isDisabled={true}
     >
-      <SingleSelectChoice value="a">Option A</SingleSelectChoice>
-      <SingleSelectChoice value="b">Option B</SingleSelectChoice>
-      <SingleSelectChoice value="c">Option C</SingleSelectChoice>
+      <SingleSelectChoice>Option A</SingleSelectChoice>
+      <SingleSelectChoice>Option B</SingleSelectChoice>
+      <SingleSelectChoice>Option C</SingleSelectChoice>
     </SingleSelect>
   );
 }
@@ -114,13 +114,13 @@ export function LongLabels() {
         selected={selected}
         eliminated={eliminated}
       >
-        <SingleSelectChoice value="a">
+        <SingleSelectChoice>
           This is a really long label to test how well the text wraps
         </SingleSelectChoice>
-        <SingleSelectChoice value="b">
+        <SingleSelectChoice>
           It is in a really small container
         </SingleSelectChoice>
-        <SingleSelectChoice value="c">Small option</SingleSelectChoice>
+        <SingleSelectChoice>Small option</SingleSelectChoice>
       </SingleSelect>
     </Box>
   );

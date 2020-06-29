@@ -8,7 +8,10 @@ function Checkbox({
   id,
   checked = false,
   disabled = false,
-  onChange,
+  onBlur = () => {},
+  onClick = () => {},
+  onChange = () => {},
+  onFocus = () => {},
   value,
   ...props
 }) {

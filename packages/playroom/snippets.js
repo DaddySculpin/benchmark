@@ -18,9 +18,9 @@ export default [
     name: 'Single Select',
     code: `
       <SingleSelect>
-          <SingleSelectChoice value="a">Option A</SingleSelectChoice>
-          <SingleSelectChoice value="b">Option B</SingleSelectChoice>
-          <SingleSelectChoice value="c">Option C</SingleSelectChoice>
+          <SingleSelectChoice>Option A</SingleSelectChoice>
+          <SingleSelectChoice>Option B</SingleSelectChoice>
+          <SingleSelectChoice>Option C</SingleSelectChoice>
         </SingleSelect>
     `
   },

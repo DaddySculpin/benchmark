@@ -1,13 +1,17 @@
-import React, { useContext, createContext } from 'react';
+import React, { useContext, createContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button';
 import { Box, Flex } from '../Base';
 import Option from '../Option';
 import Stack from '../Stack';
+import { numberToLetter, getNumberLabel } from '../../util/helpers.js';
 
 const MultipleSelectContext = createContext({
   selected: [],
   eliminated: [],
   isGroupDisabled: false,
+  labelType: 'letters',
+  getChoiceId: () => {},
   onClear: () => {},
   onChange: () => {},
   onEliminate: () => {}
@@ -29,15 +33,24 @@ function MultipleSelect({
   selected = [],
   eliminated = [],
   isDisabled = false,
+  labelType = 'letters',
   onChange,
   onClear,
   onEliminate
 }) {
+  let choiceCount = 0;
+  function getChoiceId() {
+    choiceCount += 1;
+    return choiceCount;
+  }
+
   return (
     <MultipleSelectContext.Provider
       value={{
         selected,
         isGroupDisabled: isDisabled,
+        getChoiceId,
+        labelType,
         onClear,
         onChange,
         onEliminate,
@@ -69,10 +82,25 @@ export function MultipleSelectChoice({ value, children, isDisabled }) {
   const {
     selected,
     eliminated,
+    getChoiceId,
+    labelType,
     onChange,
     onEliminate,
     isGroupDisabled
   } = useMultipleSelectContext();
+
+  // We generate a unique ID to each choice for this
+  // SingleSelect instance. This ID is used to generate the
+  // labels and also to assign a default choice value.
+  const [choiceId, setChoiceId] = useState(0);
+  useEffect(() => {
+    setChoiceId(getChoiceId());
+  }, []);
+
+  // If no value is defined, set it useding the choice ID.
+  value = value || numberToLetter(choiceId);
+
+  const label = getNumberLabel(choiceId, labelType);
 
   return (
     <Box>
@@ -81,6 +109,7 @@ export function MultipleSelectChoice({ value, children, isDisabled }) {
         isDisabled={isDisabled || isGroupDisabled}
         isSelected={selected.includes(value)}
         isEliminated={eliminated.includes(value)}
+        label={label}
         onChange={onChange}
         onEliminate={onEliminate}
         value={value}
@@ -90,6 +119,24 @@ export function MultipleSelectChoice({ value, children, isDisabled }) {
     </Box>
   );
 }
+
+MultipleSelect.propTypes = {
+  // dom
+  id: PropTypes.string,
+  children: PropTypes.node,
+  isDisabled: PropTypes.bool,
+
+  // display
+  labelType: PropTypes.oneOf(['letters', 'numbers', 'none']),
+
+  // data
+  selected: PropTypes.array,
+  eliminated: PropTypes.array,
+  // events
+  onClear: PropTypes.func,
+  onChange: PropTypes.func,
+  onEliminate: PropTypes.func
+};
 
 MultipleSelect.Choice = MultipleSelectChoice;
 

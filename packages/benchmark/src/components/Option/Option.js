@@ -5,7 +5,7 @@ import RadioButton from '../RadioButton';
 import Checkbox from '../Checkbox';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
-import { Flex, Text } from '../Base';
+import { Flex, Text, Box } from '../Base';
 
 function Choice({
   children,
@@ -19,10 +19,6 @@ function Choice({
   onChange,
   ...props
 }) {
-  if (typeof children === 'string' && !label) {
-    label = children;
-  }
-
   const optionId = `option-${useId()}`;
 
   function handleEliminate(event, value) {
@@ -63,12 +59,17 @@ function Choice({
       <Flex flexGrow="1" opacity={isEliminated ? '50%' : '100%'}>
         {/* CHECKBOX / RADIO BUTTON */}
         <Flex bg="secondary" px="3" py="3" flexShrink="0" alignItems="center">
+          {label && (
+            <Box pr="2" width="26px" sx={{ opacity: isDisabled ? '.5' : null }}>
+              <Text fontWeight="semibold">{label}</Text>
+            </Box>
+          )}
           <InputControl
             checked={isSelected}
             disabled={isDisabled}
             size="24px"
             label={label}
-            aria-labelledby={optionId}
+            aria-labelledby={label}
           />
         </Flex>
 
@@ -114,7 +115,6 @@ function Choice({
           ) : (
             <Icon name="eliminate-unselected" size="24px" />
           )}
-          {/* <EliminateIcon size="28" /> */}
         </Button>
       </Flex>
     </Flex>

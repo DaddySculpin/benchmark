@@ -35,9 +35,9 @@ export function Basic() {
       eliminated={eliminated}
       maxChoices={2}
     >
-      <MultipleSelectChoice value="a">Option A</MultipleSelectChoice>
-      <MultipleSelectChoice value="b">Option B</MultipleSelectChoice>
-      <MultipleSelectChoice value="c">Option C</MultipleSelectChoice>
+      <MultipleSelectChoice>Option A</MultipleSelectChoice>
+      <MultipleSelectChoice>Option B</MultipleSelectChoice>
+      <MultipleSelectChoice>Option C</MultipleSelectChoice>
     </MultipleSelect>
   );
 }
@@ -70,9 +70,9 @@ export function Disabled() {
       isDisabled={true}
       maxChoices={2}
     >
-      <MultipleSelectChoice value="a">Option A</MultipleSelectChoice>
-      <MultipleSelectChoice value="b">Option B</MultipleSelectChoice>
-      <MultipleSelectChoice value="c">Option C</MultipleSelectChoice>
+      <MultipleSelectChoice>Option A</MultipleSelectChoice>
+      <MultipleSelectChoice>Option B</MultipleSelectChoice>
+      <MultipleSelectChoice>Option C</MultipleSelectChoice>
     </MultipleSelect>
   );
 }
@@ -104,11 +104,9 @@ export function OptionDisabled() {
       eliminated={eliminated}
       maxChoices={2}
     >
-      <MultipleSelectChoice value="a" isDisabled={true}>
-        Option A
-      </MultipleSelectChoice>
-      <MultipleSelectChoice value="b">Option B</MultipleSelectChoice>
-      <MultipleSelectChoice value="c">Option C</MultipleSelectChoice>
+      <MultipleSelectChoice isDisabled={true}>Option A</MultipleSelectChoice>
+      <MultipleSelectChoice>Option B</MultipleSelectChoice>
+      <MultipleSelectChoice>Option C</MultipleSelectChoice>
     </MultipleSelect>
   );
 }
@@ -141,13 +139,13 @@ export function LongLabels() {
         eliminated={eliminated}
         maxChoices={2}
       >
-        <MultipleSelectChoice value="a">
+        <MultipleSelectChoice>
           This is a really long label to test how well the text wraps
         </MultipleSelectChoice>
-        <MultipleSelectChoice value="b">
+        <MultipleSelectChoice>
           It is in a really small container
         </MultipleSelectChoice>
-        <MultipleSelectChoice value="c">Small option</MultipleSelectChoice>
+        <MultipleSelectChoice>Small option</MultipleSelectChoice>
       </MultipleSelect>
     </Box>
   );
