@@ -95,6 +95,7 @@ export function MultipleSelectChoice({ value, children, isDisabled }) {
   const [choiceId, setChoiceId] = useState(0);
   useEffect(() => {
     setChoiceId(getChoiceId());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // If no value is defined, set it useding the choice ID.

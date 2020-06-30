@@ -3,7 +3,6 @@ import React, {
   createContext,
   useReducer,
   useEffect,
-  useRef,
   useState
 } from 'react';
 import PropTypes from 'prop-types';
@@ -115,6 +114,7 @@ export function SingleSelectChoice({ value, children, isDisabled }) {
   const [choiceId, setChoiceId] = useState(0);
   useEffect(() => {
     setChoiceId(getChoiceId());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // If no value is defined, set it useding the choice ID.
