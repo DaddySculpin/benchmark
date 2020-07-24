@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[24],{zTuQ:function(n,t,o){"use strict";o.r(t),o.d(t,"_frontmatter",(function(){return u})),o.d(t,"default",(function(){return p}));var e=o("+wNj"),r=(o("ERkP"),o("ZVZ0")),c=o("tjUo"),u={},a={_frontmatter:u},s=c.a;function p(n){var t=n.components,o=Object(e.a)(n,["components"]);return Object(r.b)(s,Object.assign({},a,o,{components:t,mdxType:"MDXLayout"}))}p.isMDXComponent=!0}}]);
+//# sourceMappingURL=component---src-docs-guidelines-typography-mdx-80c6e70b175d82f07b0c.js.map

@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[27],{peRu:function(n,t,o){"use strict";o.r(t),o.d(t,"_frontmatter",(function(){return u})),o.d(t,"default",(function(){return s}));var e=o("+wNj"),r=(o("ERkP"),o("ZVZ0")),c=o("tjUo"),u={},a={_frontmatter:u},p=c.a;function s(n){var t=n.components,o=Object(e.a)(n,["components"]);return Object(r.b)(p,Object.assign({},a,o,{components:t,mdxType:"MDXLayout"}))}s.isMDXComponent=!0}}]);
+//# sourceMappingURL=component---src-docs-overview-design-tokens-mdx-eaed83e007b6f28b6224.js.map
