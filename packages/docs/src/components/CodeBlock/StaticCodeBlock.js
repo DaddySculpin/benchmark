@@ -3,15 +3,14 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import { Box } from '@coreym/benchmark';
 import codeTheme from './themes/default.js';
 
-export default function StaticCodeBlock({ className, children }) {
-  const language = className.replace(/language-/, '');
-  console.log(children);
+export default function StaticCodeBlock({ className, children, language }) {
+  const lang = language || className.replace(/language-/, '') || 'jsx';
   return (
     <Highlight
       {...defaultProps}
       theme={codeTheme}
       code={children.trim()}
-      language={language}
+      language={lang}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
         return (
@@ -24,6 +23,7 @@ export default function StaticCodeBlock({ className, children }) {
               padding: '20px',
               borderRadius: '8px',
               fontSize: '16px',
+              marginBottom: '12px',
             }}
           >
             {/* need to have an inline block to ensure parents padding works */}

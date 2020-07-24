@@ -5,19 +5,17 @@ import {
   Heading,
   Paragraph,
   ThemeProvider,
-  Tag,
-  Box,
-  Stack,
-  Flex,
   Global,
-  Icon,
+  Box,
 } from '@coreym/benchmark';
+import * as Components from '@coreym/benchmark';
 import docsTheme from './theme';
 import Layout from './components/Layout';
 import CodeBlock from './components/CodeBlock';
 import ColorSwatch from './components/ColorSwatch';
 
 const components = {
+  ...Components,
   h1: (props) => <Heading level={1} {...props} />,
   h2: (props) => <Heading level={2} mt="4" {...props} />,
   h3: (props) => <Heading level={3} mt="3" {...props} />,
@@ -25,14 +23,11 @@ const components = {
   h5: (props) => <Heading level={5} {...props} />,
   p: (props) => <Paragraph lineHeight="1.5" mt="2" {...props} />,
   pre: (props) => <div {...props} />,
+  hr: (props) => (
+    <Box as="hr" my="4" borderTop="1" borderTopColor="n.100" {...props} />
+  ),
   code: CodeBlock,
-  Tag,
   ColorSwatch,
-  ThemeProvider,
-  Box,
-  Stack,
-  Flex,
-  Icon,
 };
 
 export default function Root(props) {

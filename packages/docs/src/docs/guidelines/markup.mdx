@@ -1,0 +1,131 @@
+---
+title: Markup
+path: /guidelines/markup
+group: Guidelines
+status: In Progress
+---
+
+## Domain Language
+
+A design systems allows us to define our own Domain Specific Language (DSL). This is the common language used by developers, designers and content authors.
+
+When a "primary button" is used all parties know:
+
+- What it looks like
+- It's intent
+- How it behaves
+- It's accessibility implications
+
+The following guidelines are to keep the benchmark DSL universally accessible. The primary goal is to provide a language with as little friction as possible in conversation, code and tooling.
+
+---
+
+### Universal
+
+Markup should be readable by someone that is non-technical.
+
+```jsx
+// BAD: What does this mean for a non-technical person?
+<TD><TD/>
+
+// GOOD: Clear intent
+<TableCell><TableCell/>
+```
+
+---
+
+### Clear
+
+Markup should avoid ambiguity.
+
+```jsx
+// BAD: The "2" value is ambiguous.
+// It could imply a pixel/percent value.
+<Stack spacing="2"><Stack/>
+
+// GOOD: The spacing scale is clear of conflicts.
+<Stack spacing="small"><Stack/>
+```
+
+---
+
+### Self Describing
+
+Markup should be readable by someone who is new to the system.
+
+```jsx
+// BAD: Without any context it is not clear what this does.
+<MCMS><MCMS/>
+
+// GOOD: Clearly states
+<MultipleSelect><MultipleSelect/>
+```
+
+---
+
+### Consistent
+
+Markup should be consistent. Pick one word per concept.
+
+```jsx
+// BAD: Two props with the same effect but named differently.
+<Switch disabled />
+<TextInput isDisabled />
+
+// GOOD: Consistent naming.
+<Switch isDisabled />
+<TextInput isDisabled />
+```
+
+---
+
+### Sensible Defaults
+
+The most common use case for a component should be usable without having to specify props.
+
+```jsx
+// BAD: The first button is a "bare" button with no styling applied.
+// The "bare" button is a rare use case and the most common use
+// case should be shown instead.
+<Button />
+
+// GOOD: The primary button is the default.
+// Bare buttons can still be accessed by specifying it in the variant.
+<Button />
+<Button variant="bare" />
+```
+
+---
+
+### Property Inference
+
+Props should having naming conventions to help infer what type of data they accept.
+
+```jsx
+// Boolean props should be prefixed with either is, can or has.
+
+// GOOD:
+// "is" for visual variations
+<Modal isActive />
+
+// "can" for behvior variations
+<Modal canExpand />
+
+// "has" to toggle UI elements
+<Modal hasCloseButton />
+```
+
+```jsx
+// Events should be prefixed with "on".
+
+// GOOD:
+// "on" for events
+<MultipleSelect onSelect />
+```
+
+---
+
+### References
+
+1. [Clean Code](https://www.goodreads.com/book/show/3735293-clean-code)
+2. [How to name props for React components](https://dlinau.wordpress.com/2016/02/22/how-to-name-props-for-react-components/)
